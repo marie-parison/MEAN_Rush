@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+body, .container {
+    background: #E6ECF0;
+}
+
+.col-2, .col-9 {
+    background: white;
+}

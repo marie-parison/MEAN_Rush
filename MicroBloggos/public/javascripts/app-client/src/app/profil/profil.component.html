@@ -1,0 +1,17 @@
+<app-nav></app-nav>
+<div *ngIf="!edition_mode" class="container">
+    <div class="row justify-content-center">
+        <div class="col-2 m-3">
+            <div *ngIf="user_profil">
+                <p>{{ user_profil.name }}</p>
+                <p *ngIf="user_profil.following">Following : {{ user_profil.following.length }}</p>
+                <p *ngIf="user_profil.followers">Followers : {{ user_profil.followers.length }}</p>
+                <button *ngIf="user_profil._id == user._id" (click)="onEdit()">Edit</button>
+            </div>
+        </div>
+        <div class="col-9 m-3">
+            <app-messages [user]="user"></app-messages>
+        </div>
+    </div>
+</div>
+<app-edit *ngIf="edition_mode" (editionEnded)='backToProfil()' [user]="user"></app-edit>
